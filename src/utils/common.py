@@ -10,13 +10,14 @@ from src.utils.constants import CONFIG_FILE
 from src.utils.constants import LOGGING_FORMAT
 
 
-def create_logger(logger_name, level=logging.INFO, fmt=LOGGING_FORMAT) -> logging.Logger:
+def create_logger(logger_name: str, level: int = logging.INFO, fmt: str = LOGGING_FORMAT) -> logging.Logger:
     """
     Creates and configures a logger object.
 
     Args:
         logger_name (str): The name of the logger.
         level (int): The log level to use (default: logging.INFO).
+        fmt (str): The format string to use for the logger (default: LOGGING_FORMAT).
 
     Returns:
         logging.Logger: The configured logger object.
