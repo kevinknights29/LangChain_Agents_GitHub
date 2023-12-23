@@ -52,7 +52,7 @@ def _check_response(response: requests.Response) -> requests.Response:
         raise requests.exceptions.HTTPError(message)
         return
 
-    if response.status_code != 200:
+    if response.status_code not in [200, 201]:
         message = f"Request failed with status code {response.status_code}"
         logger.error(message)
         raise requests.exceptions.HTTPError(message)
@@ -95,6 +95,51 @@ def get_issues(owner: str = OWNER, repo: str = REPO, api_url: str = API_URL) -> 
         )
         request = _check_response(request)
         return request.json()
+    except requests.exceptions.MissingSchema as e:
+        message = f"Invalid URL: {API_URL}"
+        logger.error(message)
+        raise ValueError(message) from e
+        return
+    except requests.exceptions.ConnectionError as e:
+        message = f"Unable to connect to {API_URL}"
+        logger.error(message)
+        raise ConnectionError(message) from e
+        return
+
+
+def create_comment_on_issue(
+    issue_number: int,
+    comment: str,
+    owner: str = OWNER,
+    repo: str = REPO,
+    api_url: str = API_URL,
+) -> dict:
+    """
+    Comment on a GitHub issue.
+
+    Args:
+        issue_number (int): The issue number.
+        comment (str): The comment to post.
+        owner (str, optional): The owner of the repository. Defaults to OWNER.
+        repo (str, optional): The name of the repository. Defaults to REPO.
+        api_url (str, optional): The base URL for the GitHub API. Defaults to API_BASE_URL.
+            NOTE: Do not include a trailing slash.
+
+    Returns:
+        dict: The response from the GitHub API.
+
+    Raises:
+        ValueError: If the API_BASE_URL is invalid.
+        ConnectionError: If the API_BASE_URL is unreachable.
+    """
+
+    try:
+        url = f"{API_URL}/repos/{owner}/{repo}/issues/{issue_number}/comments"
+        headers = {"Authorization": f"Bearer {AUTH_TOKEN}", "Accept": "application/vnd.github+json"}
+        data = {"body": comment}
+        response = requests.post(url=url, headers=headers, json=data, timeout=TIMEOUT)
+        _check_response(response)
+        return response.json()
     except requests.exceptions.MissingSchema as e:
         message = f"Invalid URL: {API_URL}"
         logger.error(message)
