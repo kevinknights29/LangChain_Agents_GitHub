@@ -1,0 +1,20 @@
+name: create-branch-on-issue
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  create-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v2
+
+      - name: create new branch
+        run: |
+          ISSUE_NUMBER=$(echo ${{ github.event.issue.number }})
+          ISSUE_TITLE=$(echo ${{ github.event.issue.title }} | sed 's/ /-/g')
+          BRANCH_NAME="${ISSUE_NUMBER}-${ISSUE_TITLE}"
+          git checkout -b $BRANCH_NAME
+          git push origin $BRANCH_NAME
