@@ -1,7 +1,9 @@
 FROM python:3.11.4-slim-bullseye
 
 ENV LANG=C.UTF-8 \
-    DEBIAN_FRONTEND=noninteractive
+    DEBIAN_FRONTEND=noninteractive \
+    PYTHONBUFFERED=1 \
+    PYTHONPATH=/workspaces/LangChain_Agents_GitHub
 
 # Set working directory
 WORKDIR /opt/app
