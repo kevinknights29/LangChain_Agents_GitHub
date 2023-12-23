@@ -18,7 +18,7 @@ CONFIG = common.config()
 logger = common.create_logger(__name__)
 
 # Constants
-AUTH_TOKEN = os.environ.get("GITHUB_AUTH_TOKEN")
+AUTH_TOKEN = os.environ.get("GITHUB_PERSONAL_ACCESS_TOKEN")
 API_URL = CONFIG["github"]["api_url"]
 OWNER = CONFIG["github"]["owner"]
 REPO = CONFIG["github"]["repo"]
