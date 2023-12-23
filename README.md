@@ -75,7 +75,7 @@ The system is designed around the core LangChain Agent framework, which facilita
 
 ## Resources
 
-- [https://python.langchain.com/docs/modules/agents/](LangChain Agents)
-- [https://python.langchain.com/docs/modules/agents/tools/multi_input_tool](Passing Functions with Multiple Args to Agents)
-- [https://docs.github.com/en/rest/issues/comments?apiVersion=2022-11-28](GitHub Issues API)
-- [https://docs.python.org/3/library/typing.html#annotating-callable-objects](Function Type Hints Anotation)
+- [LangChain Agents](https://python.langchain.com/docs/modules/agents/)
+- [Passing Functions with Multiple Args to Agents](https://python.langchain.com/docs/modules/agents/tools/multi_input_tool)
+- [GitHub Issues API](https://docs.github.com/en/rest/issues/comments?apiVersion=2022-11-28)
+- [Function Type Hints Anotation](https://docs.python.org/3/library/typing.html#annotating-callable-objects)
