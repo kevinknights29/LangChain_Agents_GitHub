@@ -10,7 +10,7 @@ from src.utils.constants import CONFIG_FILE
 from src.utils.constants import LOGGING_FORMAT
 
 
-def create_logger(logger_name, level=logging.INFO, fmt=LOGGING_FORMAT):
+def create_logger(logger_name, level=logging.INFO, fmt=LOGGING_FORMAT) -> logging.Logger:
     """
     Creates and configures a logger object.
 
