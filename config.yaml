@@ -1,3 +1,5 @@
 github:
+  api_url: "https://api.github.com"
   owner: "kevinknights29"
   repo: "AutoGen_for_GitHub_Playground"
+  timeout: 10
