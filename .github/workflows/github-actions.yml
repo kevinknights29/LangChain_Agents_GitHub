@@ -10,11 +10,15 @@ jobs:
     steps:
       - name: checkout code
         uses: actions/checkout@v2
+        with:
+            token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: create new branch
         run: |
           ISSUE_NUMBER=$(echo ${{ github.event.issue.number }})
-          ISSUE_TITLE=$(echo ${{ github.event.issue.title }} | sed 's/ /-/g')
+          ISSUE_TITLE=$(echo ${{ github.event.issue.title }} | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')
           BRANCH_NAME="${ISSUE_NUMBER}-${ISSUE_TITLE}"
+          git config user.name "kevinknights29"
+          git config user.email "kevinknights29@hotmail.com"
           git checkout -b $BRANCH_NAME
           git push origin $BRANCH_NAME
