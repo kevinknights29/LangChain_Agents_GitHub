@@ -13,6 +13,8 @@ def main():
     issue_number = issue["number"]
     comment_response = issues.create_comment_on_issue(issue_number=issue_number, comment="Test Comment")
     print("Create Comment on Issue: ", json.dumps(comment_response, indent=" " * 4), sep="\n")
+    new_issue_response = issues.create_issue("Test Issue", "This is a test")
+    print("Created a New Issue :", json.dumps(new_issue_response, indent=" " * 4), sep="\n")
 
 
 if __name__ == "__main__":
