@@ -18,11 +18,13 @@ This project aims to build LLM agents that can generate code for GitHub Issues u
 
 ### Agent Executor
 
-![image](https://github.com/kevinknights29/LangChain_Agents_GitHub/assets/74464814/f94096e4-f0bb-4af6-8404-121fc8190857)
+#### Now it can perform multiple actions
+
+![image](https://github.com/kevinknights29/LangChain_Agents_GitHub/assets/74464814/f5cbe315-c252-4301-9adc-ab306684d079)
 
 ### Output from Agent Action
 
-![image](https://github.com/kevinknights29/LangChain_Agents_GitHub/assets/74464814/29a3fd03-e4c8-427b-980c-2209f22046a1)
+![image](https://github.com/kevinknights29/LangChain_Agents_GitHub/assets/74464814/a0a250e1-da1b-45a4-8fb4-f370c8e1c844)
 
 ## Overview
 
@@ -72,6 +74,7 @@ The system is designed around the core LangChain Agent framework, which facilita
 | 2023/12/23 | GPT-4 performs better reasoning than GPT-3, cost increase vs quality impact should be compared |
 | 2023/12/23 | Using the `initialize_agent` function works better for multi input agents |
 | 2023/12/23 | You can model agents with class since they consist of the same core elements |
+| 2023/12/24 | Agent can perform multiple tasks on a single chain |
 
 ## Resources
 
