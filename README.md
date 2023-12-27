@@ -18,13 +18,13 @@ This project aims to build LLM agents that can generate code for GitHub Issues u
 
 ### Agent Executor
 
-#### Now it can perform multiple actions
+#### Update the worker
 
-![image](https://github.com/kevinknights29/LangChain_Agents_GitHub/assets/74464814/f5cbe315-c252-4301-9adc-ab306684d079)
+![image](https://github.com/kevinknights29/AutoGen_for_GitHub_Playground/assets/74464814/1f185667-192c-442f-ab81-6fecdc0cc7da)
 
-### Output from Agent Action
+#### It can provide a solution in the commment
 
-![image](https://github.com/kevinknights29/LangChain_Agents_GitHub/assets/74464814/a0a250e1-da1b-45a4-8fb4-f370c8e1c844)
+![image](https://github.com/kevinknights29/AutoGen_for_GitHub_Playground/assets/74464814/f40b13ad-9f94-4a54-8737-767852b062dc)
 
 ## Overview
 
